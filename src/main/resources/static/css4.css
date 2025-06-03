@@ -1,0 +1,225 @@
+/* styling*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Navbar Styles */
+.navbar {
+  background-color: #007b8f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #ffeb3b;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ffeb3b;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Styles */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  font-size: 28px;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #007b8f;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .nav-menu {
+    display: flex;
+  }
+
+  .nav-toggle-label {
+    display: block;
+    color: white;
+  }
+
+  .nav-menu li {
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+
+
+
+
+
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/**************************************************************/
+
+
+.myths {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    text-align: center;
+  }
+  
+  .myths h2 {
+    font-size: 2.2rem;
+    color: #007b8f;
+    margin-bottom: 30px;
+  }
+  
+  .accordion-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+  }
+  
+  .accordion-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .accordion-header {
+    width: 100%;
+    padding: 15px;
+    background: #007b8f;
+    color: white;
+    font-size: 1.1rem;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .accordion-header:hover {
+    background: #005f6e;
+  }
+  
+  .accordion-content {
+    padding: 25px;
+    background: #f1faff;
+    color: #333;
+    max-height: 50;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.3s ease;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .accordion-item.active .accordion-content {
+    max-height: 200px;
+    padding: 15px;
+  }
+
+
+
+
+
+
+
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+  }
+  
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+  
+  .site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: greenyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+  @media (max-width: 768px) {
+    .site-name {
+      font-size: 18px;
+    }
+  
+    .logo {
+      height: 30px;
+    }
+  }
+  
+  
+  

@@ -1,0 +1,327 @@
+/* styling*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #007b8f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #ffeb3b;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ffeb3b;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Styles */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  font-size: 28px;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #007b8f;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .nav-menu {
+    display: flex;
+  }
+
+  .nav-toggle-label {
+    display: block;
+    color: white;
+  }
+
+  .nav-menu li {
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+
+
+/* registration section */
+
+
+
+.registration {
+    background: linear-gradient(135deg, #34a853, #0a6b30);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.registration-container {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.registration-container:hover {
+    transform: scale(1.02);
+}
+
+.registration h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.registration p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* form style */
+
+.registration-form input,
+.registration-form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.registration-form button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4b2b;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.registration-form button:hover {
+    background: #ff1e00;
+    transform: scale(1.05);
+}
+
+/* fade in animation */
+
+.registration-container {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/*---------------------------*/
+
+.registration-section {
+    background: linear-gradient(to right, #ffffff, #e8fafa);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .registration-section h2 {
+    font-size: 2.4rem;
+    color: #007b8f;
+    margin-bottom: 30px;
+  }
+  
+  .donor-form {
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 123, 143, 0.2);
+    animation: slideUp 0.8s ease;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #007b8f;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1.5px solid #ccc;
+    font-size: 1rem;
+    transition: border 0.3s;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #007b8f;
+    outline: none;
+    background-color: #f0fcff;
+  }
+  
+  .submit-btn {
+    background: #007b8f;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background: #005f6e;
+  }
+  
+  .form-message {
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+
+
+
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+  }
+  
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+  
+  .site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: greenyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+  @media (max-width: 768px) {
+    .site-name {
+      font-size: 18px;
+    }
+  
+    .logo {
+      height: 30px;
+    }
+  }
+  

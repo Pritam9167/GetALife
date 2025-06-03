@@ -1,0 +1,352 @@
+/* styling*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+/* Navbar Styles */
+.navbar {
+  background-color: #007b8f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #ffeb3b;
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #ffeb3b;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Styles */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  font-size: 28px;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #007b8f;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-toggle:checked + .nav-toggle-label + .nav-menu {
+    display: flex;
+  }
+
+  .nav-toggle-label {
+    display: block;
+    color: white;
+  }
+
+  .nav-menu li {
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+
+
+
+
+/* footer */
+footer {
+    background: #0b4e48;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade in effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInEffect 1s ease-in-out forwards;
+}
+
+@keyframes fadeInEffect {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* button hover effect */
+button, .cta-button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover, .cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-section {
+    background: linear-gradient(to right, #ffffff, #e8f9f9);
+    padding: 60px 20px;
+  }
+  
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1100px;
+    margin: auto;
+    align-items: center;
+  }
+  
+  .contact-info {
+    flex: 1;
+    min-width: 280px;
+    color: #007b8f;
+  }
+  
+  .contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #444;
+  }
+  
+  .contact-info ul {
+    list-style: none;
+    padding-left: 0;
+    line-height: 2;
+  }
+  
+  .contact-form {
+    flex: 1;
+    min-width: 280px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 123, 143, 0.2);
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  .contact-form h3 {
+    margin-bottom: 20px;
+    color: #007b8f;
+  }
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: transparent;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #007b8f;
+    outline: none;
+  }
+  
+  .form-group label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #999;
+    font-size: 0.9rem;
+    pointer-events: none;
+    transition: 0.2s ease;
+  }
+  
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label,
+  .form-group textarea:focus + label,
+  .form-group textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    background: white;
+    padding: 0 5px;
+    font-size: 0.8rem;
+    color: #007b8f;
+  }
+  
+  .contact-form button {
+    background: #007b8f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background: #005f6e;
+  }
+  
+  #formStatus {
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+  }
+  
+
+
+
+
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+  }
+  
+  .logo {
+    height: 40px;
+    width: auto;
+  }
+  
+  .site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: greenyellow;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+  @media (max-width: 768px) {
+    .site-name {
+      font-size: 18px;
+    }
+  
+    .logo {
+      height: 30px;
+    }
+  }
+  

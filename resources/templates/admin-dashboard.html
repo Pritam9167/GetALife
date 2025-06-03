@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <style>
+    body { font-family: Arial; background: #f5f5f5; padding: 20px; }
+    h1 { text-align: center; color: #333; }
+    .section { margin: 30px 0; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { padding: 10px; border: 1px solid #ddd; }
+    th { background-color: #4CAF50; color: white; }
+  </style>
+</head>
+<body>
+  <h1>🛠️ Admin Dashboard</h1>
+
+  <div class="section">
+    <h2>🧑 Registered Donors</h2>
+    <table>
+      <tr>
+        <th>ID</th><th>Name</th><th>Email</th><th>Organ</th>
+      </tr>
+      <tr th:each="donor : ${donors}">
+        <td th:text="${donor.id}"></td>
+        <td th:text="${donor.fullName}"></td>
+        <td th:text="${donor.email}"></td>
+        <td th:text="${donor.organ}"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>📥 Contact Messages</h2>
+    <table>
+      <tr>
+        <th>ID</th><th>Name</th><th>Email</th><th>Message</th>
+      </tr>
+      <tr th:each="contact : ${contacts}">
+        <td th:text="${contact.id}"></td>
+        <td th:text="${contact.name}"></td>
+        <td th:text="${contact.email}"></td>
+        <td th:text="${contact.message}"></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>📖 Shared Stories</h2>
+    <table>
+      <tr>
+        <th>ID</th><th>Name</th><th>Story</th>
+      </tr>
+      <tr th:each="story : ${stories}">
+        <td th:text="${story.id}"></td>
+        <td th:text="${story.name}"></td>
+        
+		<td th:text="${story.content}"></td>
+		
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>
